@@ -2,7 +2,8 @@
  import mongoose from "mongoose";
  import bodyparser from "body-parser";
 import userRouter from "./routers/userRouter.js";
-import jwt from "jwtwebtoken";
+ import jwt from "jwtwebtoken";
+
 
  const app = express();
  
