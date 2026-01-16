@@ -3,6 +3,7 @@
  import bodyparser from "body-parser";
 import userRouter from "./routers/userRouter.js";
  import jwt from "jwtwebtoken";
+import productRouter from "./routers/productRouter.js";
 
 
  const app = express();
@@ -51,6 +52,7 @@ import userRouter from "./routers/userRouter.js";
  
 
  app.use("/users",userRouter)
+ app.use("/products",productRouter)
 
 
 app.listen(5000 ,()=>{
