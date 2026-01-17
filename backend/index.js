@@ -4,6 +4,8 @@
 import userRouter from "./routers/userRouter.js";
  import jwt from "jwtwebtoken";
 import productRouter from "./routers/productRouter.js";
+import dotenv from "dotenv"
+dotenv.config()
 
 
  const app = express();
@@ -16,7 +18,7 @@ import productRouter from "./routers/productRouter.js";
              const token = value.replace("Bearer ","")
              jwt.verify(
                     token,
-                    "cdc-6503",
+                    process.env.JWT_SECRETS,
                      (err,decoded)=>{
                         if(decoded == null){
                            res.status(403).json({
@@ -38,7 +40,7 @@ import productRouter from "./routers/productRouter.js";
    }
  )
 
- const connectingString = "mongodb+srv://admin:1234@cluster0.sffw3sz.mongodb.net/?appName=Cluster0"
+ const connectingString =  process.env.MONGO_URI
  mongoose.connect(connectingString).then(
     ()=>{
         console.log("Database connected")
