@@ -1,28 +1,28 @@
-import mongoose from 'mongoose';
+ import mongoose from 'mongoose';
 
-const userSchemas = new mongoose.Schema({
-    firstName: {
+const userSchema = new mongoose.Schema({
+    firstName : {
         type : String,
-        reqeired : true
+        required : true
     },
     lastName : {
         type : String,
-        reqeired : true
+        required : true
     },
     email : {
         type : String,
-        reqeired :true,
+        required : true,
         unique : true
     },
     password : {
         type : String,
-        reqeired : true
+        required : true
     },
     phone : {
         type : String,
-        default : "not given"
+        default : "NOT GIVEN"
     },
-    isBlocked : {
+    isBlocked: {
         type : Boolean,
         default : false
     },
@@ -32,16 +32,16 @@ const userSchemas = new mongoose.Schema({
     },
     isEmailVerified : {
         type : Boolean,
-        default :false
+        default : false
     },
     image : {
         type : String,
-        default: "https://share.google/Fz89f6eMIkHzDVC2g"
+        default : "https://png.pngtree.com/png-clipart/20191120/original/pngtree-outline-user-icon-png-image_5045523.jpg"
     }
-    
-
 })
 
-const User = mongoose.model("users",userSchemas)
+const User = mongoose.model("users",userSchema)
 
-export default User ;
+export default User;
+
+

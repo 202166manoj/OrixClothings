@@ -1,4 +1,4 @@
-import express from 'express';
+ import express from 'express';
 import { createProduct, deleteProduct, getProductInfo, getProducts, searchProducts, updateProduct } from '../controllers/productController.js';
 
 
